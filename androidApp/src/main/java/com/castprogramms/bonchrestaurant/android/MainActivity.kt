@@ -1,18 +1,18 @@
 package com.castprogramms.bonchrestaurant.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
-import com.castprogramms.bonchrestaurant.Greeting
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.castprogramms.bonchrestaurant.CLASSTEST
 import com.castprogramms.bonchrestaurant.android.databinding.ActivityMainBinding
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
+    private val a : CLASSTEST by inject()
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
