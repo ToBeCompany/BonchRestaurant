@@ -12,6 +12,7 @@ class SelectionRestaurantFragment: Fragment(R.layout.fragment_selection_restaura
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentSelectionRestaurantBinding.bind(view)
+        binding.recyclerRestaurants.adapter = RestaurantAdapter()
 //        (requireActivity() as MainActivity).setTitleActionBar("Выбор ресторана")
     }
 }

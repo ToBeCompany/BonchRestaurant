@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = ""
-//        supportFragmentManager.findFragmentById(R.id.nav_host_fragment)?.findNavController()
         navController = findNavController(R.id.nav_host_fragment)
 //        binding.titleToolbar.text = Html.fromHtml("<font color='#FFFFFF'>Выбор ресторана</font>")
         val appbarConfiguration = AppBarConfiguration(navController.graph)

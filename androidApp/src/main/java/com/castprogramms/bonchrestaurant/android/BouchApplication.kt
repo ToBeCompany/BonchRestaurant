@@ -10,7 +10,7 @@ import org.koin.core.logger.Level
 import org.koin.dsl.module
 
 class BouchApplication : MultiDexApplication() {
-    val androidModule = module {
+    private val androidModule = module {
         viewModel { OrderViewModel() }
     }
     override fun onCreate() {
@@ -18,7 +18,7 @@ class BouchApplication : MultiDexApplication() {
         initKoin {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
             androidContext(this@BouchApplication)
-            modules()
+            modules(androidModule)
         }
     }
 }
