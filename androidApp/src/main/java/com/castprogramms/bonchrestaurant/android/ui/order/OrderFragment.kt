@@ -1,12 +1,11 @@
 package com.castprogramms.bonchrestaurant.android.ui.order
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.OrderFragmentBinding
 import kotlinx.coroutines.flow.collect
@@ -19,6 +18,7 @@ class OrderFragment : Fragment(R.layout.order_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = OrderFragmentBinding.bind(view)
+        binding.foodList.layoutManager = GridLayoutManager(requireContext(), 2)
         lifecycleScope.launchWhenStarted {
             viewModel.flow.collect {
                 binding.foodList.adapter = OrderAdapter(it)

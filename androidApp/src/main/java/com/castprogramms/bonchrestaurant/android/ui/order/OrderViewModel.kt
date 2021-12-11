@@ -7,8 +7,8 @@ import kotlinx.coroutines.flow.flow
 class OrderViewModel : ViewModel() {
 
     val flow = flow<List<Food>> {
-        List<Food>(10){
+        emit(List<Food>(10){
             Food(10.0,"1231", "21e21", "q2ss")
-        }
+        })
     }
 }

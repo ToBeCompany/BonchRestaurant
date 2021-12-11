@@ -12,9 +12,7 @@
         tools:layout="@layout/fragment_selection_restaurant" >
         <action
             android:id="@+id/action_selectionRestaurantFragment_to_orderFragment"
-            app:destination="@id/orderFragment"
-            app:popUpTo="@id/selectionRestaurantFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/orderFragment" />
     </fragment>
     <fragment
         android:id="@+id/bookingFragment"
@@ -27,7 +25,6 @@
         tools:layout="@layout/order_fragment" >
         <action
             android:id="@+id/action_orderFragment_to_bookingFragment"
-            app:destination="@id/bookingFragment"
-            app:popUpTo="@id/orderFragment" />
+            app:destination="@id/bookingFragment" />
     </fragment>
 </navigation>
