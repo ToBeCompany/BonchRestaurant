@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484235955809",
+    "project_id": "bonchrestaurant",
+    "storage_bucket": "bonchrestaurant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484235955809:android:a5beb1e1e07827215ae420",
+        "android_client_info": {
+          "package_name": "com.castprogramms.bonchrestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484235955809-nqen39to45v9edl9d7ahfdr0grtl33ci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDrP2Mi86lI5g79txmqZ9eNASsI7SjKUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484235955809-nqen39to45v9edl9d7ahfdr0grtl33ci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

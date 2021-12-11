@@ -6,6 +6,7 @@
     app:startDestination="@id/selectionRestaurantFragment">
 
     <fragment
+        android:label="Выбор ресторана"
         android:id="@+id/selectionRestaurantFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.selectionrestaurant.SelectionRestaurantFragment"
         tools:layout="@layout/fragment_selection_restaurant" />
