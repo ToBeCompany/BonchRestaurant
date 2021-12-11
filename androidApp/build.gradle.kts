@@ -22,9 +22,11 @@ android {
         viewBinding = true
     }
 }
-
 dependencies {
+    val koin_version = "3.1.4"
+
     implementation(project(":shared"))
+    implementation("io.insert-koin:koin-android:$koin_version")
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.2")

@@ -7,6 +7,8 @@ plugins {
 version = "1.0"
 
 kotlin {
+    val koin_version = "3.1.4"
+
     android()
     iosX64()
     iosArm64()
@@ -21,10 +23,12 @@ kotlin {
             baseName = "shared"
         }
     }
-    
-    sourceSets {
-        val commonMain by getting{
 
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation("io.insert-koin:koin-core:$koin_version")
+            }
         }
         val commonTest by getting {
             dependencies {
