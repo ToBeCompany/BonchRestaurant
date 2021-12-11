@@ -9,13 +9,13 @@ import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import org.koin.dsl.module
 
-class BoucnApplication : MultiDexApplication() {
+class BouchApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
         startKoin {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
-            androidContext(this@BoucnApplication)
+            androidContext(this@BouchApplication)
             modules(appModule)
         }
     }

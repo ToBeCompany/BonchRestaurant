@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 //        supportFragmentManager.findFragmentById(R.id.nav_host_fragment)?.findNavController()
         navController = findNavController(R.id.nav_host_fragment)
         supportActionBar?.title = Html.fromHtml("<font color='#FFFFFF'>Выбор ресторана</font>")
-
         val appbarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appbarConfiguration)
     }

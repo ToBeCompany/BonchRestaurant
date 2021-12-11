@@ -7,6 +7,6 @@
 
     <fragment
         android:id="@+id/selectionRestaurantFragment"
-        android:name="com.castprogramms.bonchrestaurant.android.SelectionRestaurantFragment"
+        android:name="com.castprogramms.bonchrestaurant.android.ui.selectionrestaurant.SelectionRestaurantFragment"
         tools:layout="@layout/fragment_selection_restaurant" />
 </navigation>
