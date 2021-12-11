@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="callback_headred">Did you like the restaurant?</string>
+    <string name="feedback_desc">" Leave your impressions to help us become better!"</string>
+    <string name="send">Send</string>
+    <string name="not_now">Not now</string>
+</resources>

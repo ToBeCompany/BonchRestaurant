@@ -25,6 +25,9 @@ android {
     }
 }
 dependencies {
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
     val koin_version = "3.1.4"
 
     implementation(project(":shared"))
