@@ -4,4 +4,5 @@
     <string name="feedback_desc">" Leave your impressions to help us become better!"</string>
     <string name="send">Send</string>
     <string name="not_now">Not now</string>
+    <string name="book_a_table">Book a table</string>
 </resources>

@@ -9,9 +9,6 @@ import com.castprogramms.bonchrestaurant.android.databinding.FragmentSelectionRe
 
 class SelectionRestaurantFragment: Fragment(R.layout.fragment_selection_restaurant) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentSelectionRestaurantBinding.bind(view)
