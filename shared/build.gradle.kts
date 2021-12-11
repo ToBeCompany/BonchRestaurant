@@ -27,6 +27,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC")
                 implementation("io.insert-koin:koin-core:$koin_version")
             }
         }

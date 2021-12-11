@@ -11,6 +11,8 @@ android {
         targetSdk = 31
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
+
     }
     buildTypes {
         getByName("release") {
@@ -26,6 +28,8 @@ dependencies {
     val koin_version = "3.1.4"
 
     implementation(project(":shared"))
+    implementation("androidx.multidex:multidex:2.0.1")
+
     implementation("io.insert-koin:koin-android:$koin_version")
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
