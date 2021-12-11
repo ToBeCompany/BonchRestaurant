@@ -30,9 +30,6 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC")
                 implementation("io.insert-koin:koin-core:$koin_version")
-
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2-native-mt")
             }
         }
         val commonTest by getting {
@@ -41,7 +38,12 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+                dependencies {
+                    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt")
+                    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2-native-mt")
+                }
+        }
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))

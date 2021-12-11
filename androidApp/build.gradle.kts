@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -25,6 +27,11 @@ android {
     }
 }
 dependencies {
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2-native-mt")
+    implementation("com.google.firebase:firebase-firestore:21.4.0")
+
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
