@@ -14,7 +14,10 @@ import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.ItemRestaurantBinding
 import com.castprogramms.bonchrestaurant.utils.Restaurant
 
-class RestaurantAdapter: RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>(){
+class RestaurantAdapter(
+    private val listener: (restName : String) -> Unit
+
+): RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>(){
     var restaurants = listOf<Restaurant>()
     set(value) {
         field = value
@@ -42,8 +45,7 @@ class RestaurantAdapter: RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHo
             binding.textGeoPosition.text = restaurant.address.toString()
 
             binding.buttonForRestaurant.setOnClickListener {
-                it.findNavController()
-                    .navigate(R.id.action_selectionRestaurantFragment_to_orderFragment)
+                listener(restaurant.name)
             }
         }
     }

@@ -5,8 +5,7 @@ struct ContentView: View {
 	let greet = "qwdqwd"
 
 	var body: some View {
-		Text(greet)
-        Text("Not Yet!")
+        Text("wqwe")
 	}
 }
 

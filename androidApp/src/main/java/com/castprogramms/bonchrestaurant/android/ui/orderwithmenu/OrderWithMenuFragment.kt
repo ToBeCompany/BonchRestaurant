@@ -22,8 +22,6 @@ class OrderWithMenuFragment: Fragment(R.layout.fragment_order_with_menu) {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.order_menu, menu)
         menu.findItem(R.id.order).setOnMenuItemClickListener {
-
-
             return@setOnMenuItemClickListener true
         }
 

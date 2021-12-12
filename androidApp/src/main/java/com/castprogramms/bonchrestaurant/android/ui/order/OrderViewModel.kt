@@ -1,14 +1,17 @@
 package com.castprogramms.bonchrestaurant.android.ui.order
 
 import androidx.lifecycle.ViewModel
+import com.castprogramms.bonchrestaurant.RestaurantRepository
 import com.castprogramms.bonchrestaurant.model.Food
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.MutableStateFlow
 
-class OrderViewModel : ViewModel() {
+class OrderViewModel(
+    private val restaurantRepository: RestaurantRepository
+) : ViewModel() {
 
-    val flow = flow<List<Food>> {
-        emit(List<Food>(10){
-            Food(10.0,"1231", "21e21", "q2ss")
-        })
+    val foodStateFlow = MutableStateFlow<List<Food>>(listOf())
+
+    fun setupFoods(id : String){
+        foodStateFlow.value = restaurantRepository.foodsDataCache[id] ?: listOf()
     }
 }

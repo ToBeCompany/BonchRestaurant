@@ -6,15 +6,12 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.castprogramms.bonchrestaurant.CLASSTEST
-import com.castprogramms.bonchrestaurant.RestaurantFirebaseRepository
-import com.castprogramms.bonchrestaurant.utils.Address
-import com.castprogramms.bonchrestaurant.utils.Restaurant
+import com.castprogramms.bonchrestaurant.RestaurantRepository
 import com.google.android.material.textview.MaterialTextView
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
-    private val a: RestaurantFirebaseRepository by inject()
+    private val a: RestaurantRepository by inject()
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +21,14 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment)
         val appbarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appbarConfiguration)
+//        a.addFood(
+//            Food(
+//                100.0,
+//                "asr",
+//                "dassv",
+//                "safwe"
+//            )
+//        )
     }
 
     fun setTitleActionBar(title: String) {

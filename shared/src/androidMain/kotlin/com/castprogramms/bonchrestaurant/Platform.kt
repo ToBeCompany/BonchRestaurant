@@ -7,14 +7,10 @@ import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
 
 actual class Platform actual constructor() {
-    actual val platform: String = "Android ${android.os.Build.VERSION.SDK_INT}"
     fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
         appDeclaration()
         modules(commonModule)
     }
-
-    // called by iOS etc
-    fun initKoin() = initKoin{}
 
     val commonModule = module {
         single { FirebaseFirestore.getInstance().apply {
@@ -22,6 +18,7 @@ actual class Platform actual constructor() {
                 .setPersistenceEnabled(true)
                 .build()
         } }
-        single { RestaurantFirebaseRepository(get()) }
+        single { RestaurantRepository(get()) }
+        single { FoodRepository(get()) }
     }
 }

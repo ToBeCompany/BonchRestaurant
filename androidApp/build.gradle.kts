@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-
+    id("androidx.navigation.safeargs")
     id("com.google.gms.google-services")
 }
 
@@ -28,9 +28,10 @@ android {
 }
 dependencies {
 
+
+
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2-native-mt")
-    implementation("com.google.firebase:firebase-firestore:21.4.0")
 
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
@@ -43,8 +44,11 @@ dependencies {
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.2")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
-    implementation("androidx.navigation:navigation-fragment:2.3.5")
+
+    val nav_version = "2.3.5"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
     implementation("com.google.firebase:firebase-core:20.0.1")
     implementation("com.google.firebase:firebase-firestore:24.0.0")
     implementation("de.hdodenhof:circleimageview:3.1.0")

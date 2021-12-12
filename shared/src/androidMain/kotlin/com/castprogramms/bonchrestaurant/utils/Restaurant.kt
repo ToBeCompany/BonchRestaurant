@@ -1,3 +1,10 @@
 package com.castprogramms.bonchrestaurant.utils
 
-class Restaurant(val name: String = "", val img: String = "", val address: Address = Address())
+import com.castprogramms.bonchrestaurant.model.Food
+
+class Restaurant(
+    val name: String = "",
+    val img: String = "",
+    val address: Address = Address(),
+    val foods : List<Food> = listOf()
+)
