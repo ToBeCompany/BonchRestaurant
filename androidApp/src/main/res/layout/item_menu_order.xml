@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"
+        android:id="@+id/start_image"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"
+        android:id="@+id/end_image"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1.1"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/light_blue"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@id/image"
+        app:layout_constraintTop_toTopOf="@id/image" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:textColor="#235481"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/cost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        android:text="Salted Pasta with mushroom sauce" />
+
+    <TextView
+        android:id="@+id/cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:textColor="#235481"
+        app:layout_constraintBottom_toTopOf="@id/layout_count_items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:text="$ 4444" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="8dp"
+        android:id="@+id/image"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:elevation="2dp"
+        android:src="@drawable/test_image_for_menu"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/end_image"
+        app:layout_constraintStart_toStartOf="@id/start_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_count_items"
+        android:background="@drawable/background_for_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="0dp"
+        android:elevation="2dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:layout_constraintBottom_toBottomOf="@id/cardView"
+        app:layout_constraintStart_toStartOf="@id/start_image"
+        app:layout_constraintEnd_toEndOf="@id/end_image">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"
+            android:id="@+id/start_counter"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.67"
+            android:id="@+id/end_counter"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/minus_item"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/start_counter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="—"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/count_items"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/start_counter"
+            app:layout_constraintEnd_toEndOf="@id/end_counter"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:text="0"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/add_item"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/end_counter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="+"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

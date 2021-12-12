@@ -17,7 +17,11 @@
     <fragment
         android:id="@+id/bookingFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.booking.BookingFragment"
-        android:label="BookingFragment" />
+        android:label="BookingFragment" >
+        <action
+            android:id="@+id/action_bookingFragment_to_successBookingFragment"
+            app:destination="@id/successBookingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/orderFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.order.OrderFragment"
@@ -27,4 +31,16 @@
             android:id="@+id/action_orderFragment_to_bookingFragment"
             app:destination="@id/bookingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/successBookingFragment"
+        android:name="com.castprogramms.bonchrestaurant.android.ui.successbooking.SuccessBookingFragment"
+        android:label="SuccessBookingFragment" >
+        <action
+            android:id="@+id/action_successBookingFragment_to_orderWithMenuFragment"
+            app:destination="@id/orderWithMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderWithMenuFragment"
+        android:name="com.castprogramms.bonchrestaurant.android.ui.orderwithmenu.OrderWithMenuFragment"
+        android:label="OrderWithMenuFragment" />
 </navigation>
