@@ -14,7 +14,9 @@ import de.hdodenhof.circleimageview.CircleImageView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class OrderWithMenuAdapter(
-    items: List<Food>
+    items: List<Food>,
+    val add : (food : Food) -> Unit,
+    val remove : (food : Food) -> Unit,
 ) : OrderAdapter(
     items
 ) {
@@ -34,15 +36,19 @@ class OrderWithMenuAdapter(
 
         override fun onBind(food: Food) {
             super.onBind(food)
+
             binding.minusItem.setOnClickListener {
-                if (binding.countItems.text.toString().toInt() > 0)
+                if (binding.countItems.text.toString().toInt() > 0) {
                     binding.countItems.text = Editable.Factory.getInstance()
                         .newEditable((binding.countItems.text.toString().toInt() - 1).toString())
+                    remove(food)
+                }
             }
 
             binding.addItem.setOnClickListener {
                 binding.countItems.text = Editable.Factory.getInstance()
                     .newEditable((binding.countItems.text.toString().toInt() + 1).toString())
+                add(food)
             }
         }
     }

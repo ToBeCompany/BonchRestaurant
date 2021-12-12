@@ -20,5 +20,6 @@ actual class Platform actual constructor() {
         } }
         single { RestaurantRepository(get()) }
         single { FoodRepository(get()) }
+        single { OrderRepository() }
     }
 }

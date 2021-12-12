@@ -6,6 +6,7 @@ import android.view.MenuInflater
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.FragmentOrderWithMenuBinding
@@ -31,10 +32,13 @@ class OrderWithMenuFragment: Fragment(R.layout.fragment_order_with_menu) {
 
         binding.recyclerOrderMenu.edgeEffectFactory = BounceEdgeEffectFactory()
         binding.recyclerOrderMenu.layoutManager = GridLayoutManager(requireContext(), 2)
-
         lifecycleScope.launchWhenStarted {
             viewModel.foodStateFlow.collectLatest {
-                binding.recyclerOrderMenu.adapter = OrderWithMenuAdapter(it)
+                binding.recyclerOrderMenu.adapter = OrderWithMenuAdapter(it, {
+                    viewModel.add(it.copy())
+                },{
+                    viewModel.remove(it.copy())
+                })
             }
         }
     }
@@ -42,6 +46,9 @@ class OrderWithMenuFragment: Fragment(R.layout.fragment_order_with_menu) {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.order_menu, menu)
         menu.findItem(R.id.order).setOnMenuItemClickListener {
+            findNavController().navigate(
+                OrderWithMenuFragmentDirections.actionOrderWithMenuFragmentToCheckOrderFragment()
+            )
             return@setOnMenuItemClickListener true
         }
 

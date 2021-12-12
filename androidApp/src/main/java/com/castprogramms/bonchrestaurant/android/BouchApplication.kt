@@ -19,7 +19,7 @@ class BouchApplication : MultiDexApplication() {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
             androidContext(this@BouchApplication)
             modules(module {
-                viewModel { OrderViewModel(get()) }
+                viewModel { OrderViewModel(get(),get()) }
                 viewModel { SelectionRestaurantViewModel(get()) }
             })
         }

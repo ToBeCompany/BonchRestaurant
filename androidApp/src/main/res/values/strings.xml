@@ -7,4 +7,6 @@
     <string name="date">дд/мм/гггг</string>
     <string name="book_a_table">Book a table</string>
     <string name="time">чч:мм</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
