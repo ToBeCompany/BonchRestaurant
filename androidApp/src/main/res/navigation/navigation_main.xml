@@ -18,7 +18,7 @@
         android:id="@+id/bookingFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.booking.BookingFragment"
         tools:layout="@layout/fragment_booking"
-        android:label="BookingFragment" >
+        android:label="Бронь стола" >
         <action
             android:id="@+id/action_bookingFragment_to_successBookingFragment"
             app:destination="@id/successBookingFragment" />
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/orderFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.order.OrderFragment"
-        android:label="order_fragment"
+        android:label="Меню ресторана"
         tools:layout="@layout/order_fragment" >
         <action
             android:id="@+id/action_orderFragment_to_bookingFragment"
@@ -39,7 +39,7 @@
         android:id="@+id/successBookingFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.successbooking.SuccessBookingFragment"
         tools:layout="@layout/fragment_success_booking"
-        android:label="SuccessBookingFragment" >
+        android:label="Бронь подтверждена" >
         <action
             android:id="@+id/action_successBookingFragment_to_orderWithMenuFragment"
             app:destination="@id/orderWithMenuFragment" />
@@ -51,7 +51,7 @@
         tools:layout="@layout/fragment_order_with_menu"
         android:id="@+id/orderWithMenuFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.orderwithmenu.OrderWithMenuFragment"
-        android:label="OrderWithMenuFragment" >
+        android:label="Заказ" >
         <action
             android:id="@+id/action_orderWithMenuFragment_to_checkOrderFragment"
             app:destination="@id/checkOrderFragment" />
@@ -59,18 +59,27 @@
     <fragment
         android:id="@+id/checkOrderFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.checkorder.CheckOrderFragment"
-        android:label="fragment_check_order"
+        android:label="Проверьте заказ"
         tools:layout="@layout/fragment_check_order" />
-        android:label="OrderWithMenuFragment" />
+
     <fragment
         android:id="@+id/infoBookFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.infobook.InfoBookFragment"
-        android:label="InfoBookFragment" >
+        android:label="Ваш стол"
+        tools:layout="@layout/fragment_info_book">
         <action
             android:id="@+id/action_infoBookFragment_to_orderWithMenuFragment"
             app:destination="@id/orderWithMenuFragment" />
         <action
             android:id="@+id/action_infoBookFragment_to_checkOrderFragment"
             app:destination="@id/checkOrderFragment" />
+        <action
+            android:id="@+id/action_infoBookFragment_to_callbackFragment2"
+            app:destination="@id/callbackFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/callbackFragment2"
+        android:name="com.castprogramms.bonchrestaurant.android.ui.callback.CallbackFragment"
+        android:label="Обратная связь"
+        tools:layout="@layout/callback_fragment" />
 </navigation>

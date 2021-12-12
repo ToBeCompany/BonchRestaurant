@@ -30,7 +30,7 @@ class CheckOrderAdapter(
     class CheckOrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = ItemCheckOrderBinding.bind(view)
         fun onBind(food : Pair<Food,Int>) {
-            binding.cost.text = food.first.cost.toString()
+            binding.cost.text = "$ " + food.first.cost.toString()
             binding.summaryCost.text = (food.first.cost * food.second).toString()
             Glide.with(itemView)
                 .load(Uri.parse(food.first.image))

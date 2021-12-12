@@ -101,6 +101,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
+        android:textAllCaps="false"
         android:id="@+id/call_waiter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -109,9 +110,10 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/background_for_button"
         app:backgroundTint="#68BFFD"
-        android:text="Вызов официанта"/>
+        android:text="@string/call_waiter"/>
 
     <com.google.android.material.button.MaterialButton
+        android:textAllCaps="false"
         android:id="@+id/view_order"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -120,7 +122,7 @@
         app:layout_constraintStart_toEndOf="@id/call_waiter"
         app:layout_constraintEnd_toEndOf="@id/container_info_books"
         android:layout_marginStart="16dp"
-        android:text="Заказ"
+        android:text="@string/view_order"
         android:background="@drawable/background_for_button"/>
 
     <com.google.android.material.textview.MaterialTextView
@@ -131,7 +133,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="30dp"
         android:layout_marginStart="39dp"
-        android:text="Ваш официант"
+        android:text="@string/waiter"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="#4A516B" />
@@ -184,7 +186,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:text="Чаевые"
+                android:text="@string/tips"
                 android:textColor="#235481"
                 android:textSize="16sp"
                 android:padding="5dp"/>
@@ -203,4 +205,16 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.button.MaterialButton
+        android:textAllCaps="false"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/complete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_for_button"
+        android:text="@string/complete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

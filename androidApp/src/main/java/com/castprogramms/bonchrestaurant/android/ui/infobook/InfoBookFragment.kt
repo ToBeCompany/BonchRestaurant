@@ -1,12 +1,16 @@
 package com.castprogramms.bonchrestaurant.android.ui.infobook
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.View
+import androidx.core.animation.doOnEnd
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.FragmentInfoBookBinding
 import com.castprogramms.bonchrestaurant.android.ui.booking.BookingViewModel
+import com.google.android.material.animation.AnimationUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class InfoBookFragment: Fragment(R.layout.fragment_info_book) {
@@ -20,10 +24,25 @@ class InfoBookFragment: Fragment(R.layout.fragment_info_book) {
         }
 
         binding.callWaiter.setOnClickListener {
-            it.findNavController()
+            it.animate()
+                .rotationY(360f)
+                .setDuration(3000)
+                .setUpdateListener {
+                    it.doOnEnd {
+                        binding.callWaiter.text = "Официант в пути!"
+                    }
+                }
+                .start()
         }
         binding.dateTime.text = viewModel.getBook().date + ", " + viewModel.getBook().time
         binding.location.text = viewModel.getLocation()
-        binding.quantityGuests.text = "Количество гостей: " + viewModel.getBook().quantity_guests
+        binding.quantityGuests.text = viewModel.getBook().quantity_guests.toString() + " persons"
+
+        binding.complete.setOnClickListener {
+            findNavController().navigate(
+                InfoBookFragmentDirections.actionInfoBookFragmentToCallbackFragment2()
+            )
+        }
+
     }
 }

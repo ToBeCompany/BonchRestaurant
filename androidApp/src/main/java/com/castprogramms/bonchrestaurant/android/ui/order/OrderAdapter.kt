@@ -35,7 +35,7 @@ open class OrderAdapter(
         open val itemTitle = item.title
         open val itemImage = item.image
         open fun onBind(food: Food){
-            itemCost.text = food.cost.toString()
+            itemCost.text = "$ " + food.cost.toString()
             itemTitle.text = food.title
             Glide.with(itemView)
                 .load(Uri.parse(food.image))

@@ -49,6 +49,8 @@
         android:text="Вы хотите заказать еду сейчас?"/>
 
     <com.google.android.material.button.MaterialButton
+        android:textAllCaps="false"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/ask_need_order"
@@ -61,6 +63,8 @@
         android:id="@+id/button_create_order"/>
 
     <com.google.android.material.button.MaterialButton
+        android:textAllCaps="false"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/button_create_order"
@@ -68,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="@id/end_button"
         android:layout_marginTop="23dp"
         android:background="@drawable/background_for_button"
-        android:text="Не сейчас"
+        android:text="К столу"
         android:id="@+id/button_cancel_order"/>
 
     <androidx.constraintlayout.widget.Guideline

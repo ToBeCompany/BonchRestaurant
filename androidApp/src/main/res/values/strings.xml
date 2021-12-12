@@ -9,4 +9,9 @@
     <string name="time">чч:мм</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="complete">Complete</string>
+    <string name="call_waiter">Call Waiter</string>
+    <string name="view_order">View order</string>
+    <string name="waiter">Waiter</string>
+    <string name="tips">Tips</string>
 </resources>
