@@ -16,7 +16,6 @@ import com.castprogramms.bonchrestaurant.utils.Restaurant
 
 class RestaurantAdapter(
     private val listener: (restName : String) -> Unit
-
 ): RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>(){
     var restaurants = listOf<Restaurant>()
     set(value) {

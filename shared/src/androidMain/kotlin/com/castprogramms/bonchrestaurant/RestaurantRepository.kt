@@ -5,6 +5,7 @@ import com.castprogramms.bonchrestaurant.utils.Resource
 import com.castprogramms.bonchrestaurant.utils.Restaurant
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -18,7 +19,13 @@ class RestaurantRepository(
         const val restaurant_tag = "restaurants"
     }
 
-    val foodsDataCache : MutableMap<String, List<Food>> = mutableMapOf()
+    private val foodsDataCache : MutableMap<String, List<Food>> = mutableMapOf()
+    private var lastRestName: String = ""
+
+    fun foods(restName : String = lastRestName):List<Food> {
+        lastRestName = restName
+        return foodsDataCache[lastRestName] ?: listOf()
+    }
 
     fun getAllRestaurant() = flow<Resource<List<Restaurant>>> {
         emit(Resource.Loading())

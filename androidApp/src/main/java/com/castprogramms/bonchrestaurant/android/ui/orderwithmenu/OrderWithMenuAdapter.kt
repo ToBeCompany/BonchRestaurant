@@ -1,18 +1,24 @@
 package com.castprogramms.bonchrestaurant.android.ui.orderwithmenu
 
-import android.net.Uri
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
+import android.widget.TextView
 import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.ItemMenuOrderBinding
+import com.castprogramms.bonchrestaurant.android.ui.order.OrderAdapter
+import com.castprogramms.bonchrestaurant.android.ui.order.OrderViewModel
+import com.castprogramms.bonchrestaurant.model.Food
+import de.hdodenhof.circleimageview.CircleImageView
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class OrderWithMenuAdapter : RecyclerView.Adapter<OrderWithMenuAdapter.OrderWithMenuViewHolder>() {
+class OrderWithMenuAdapter(
+    items: List<Food>
+) : OrderAdapter(
+    items
+) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderWithMenuViewHolder {
         return OrderWithMenuViewHolder(
             LayoutInflater.from(parent.context)
@@ -20,21 +26,19 @@ class OrderWithMenuAdapter : RecyclerView.Adapter<OrderWithMenuAdapter.OrderWith
         )
     }
 
-    override fun onBindViewHolder(holder: OrderWithMenuViewHolder, position: Int) {
-        holder.bind()
-    }
-
-    override fun getItemCount() = 10
-
-    inner class OrderWithMenuViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class OrderWithMenuViewHolder(view: View) : OrderViewHolder(view) {
         private val binding = ItemMenuOrderBinding.bind(view)
-        fun bind() {
+        override val itemCost: TextView = binding.cost
+        override val itemTitle: TextView = binding.title
+        override val itemImage: CircleImageView = binding.image
+
+        override fun onBind(food: Food) {
+            super.onBind(food)
             binding.minusItem.setOnClickListener {
                 if (binding.countItems.text.toString().toInt() > 0)
-                binding.countItems.text = Editable.Factory.getInstance()
-                    .newEditable((binding.countItems.text.toString().toInt() - 1).toString())
+                    binding.countItems.text = Editable.Factory.getInstance()
+                        .newEditable((binding.countItems.text.toString().toInt() - 1).toString())
             }
-
 
             binding.addItem.setOnClickListener {
                 binding.countItems.text = Editable.Factory.getInstance()

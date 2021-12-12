@@ -19,7 +19,7 @@ class OrderFragment : Fragment(R.layout.order_fragment) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.setupFoods(
+        viewModel.loadFoods(
             args.restName
         )
     }

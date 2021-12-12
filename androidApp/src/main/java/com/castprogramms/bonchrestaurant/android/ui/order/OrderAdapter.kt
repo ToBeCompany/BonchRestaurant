@@ -13,7 +13,7 @@ import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.ItemMenuBinding
 import com.castprogramms.bonchrestaurant.model.Food
 
-class OrderAdapter(
+open class OrderAdapter(
     private val items : List<Food>
 ) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -29,16 +29,18 @@ class OrderAdapter(
 
     override fun getItemCount() = items.size
 
-    class OrderViewHolder(view : View) : RecyclerView.ViewHolder(view){
+    open class OrderViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val item = ItemMenuBinding.bind(view)
-        fun onBind(food: Food){
-            item.cost.text = food.cost.toString()
-            item.title.text = food.title
-
+        open val itemCost = item.cost
+        open val itemTitle = item.title
+        open val itemImage = item.image
+        open fun onBind(food: Food){
+            itemCost.text = food.cost.toString()
+            itemTitle.text = food.title
             Glide.with(itemView)
                 .load(Uri.parse(food.image))
                 .apply(RequestOptions.bitmapTransform(RoundedCorners(40)))
-                .into(item.image)
+                .into(itemImage)
         }
     }
 }

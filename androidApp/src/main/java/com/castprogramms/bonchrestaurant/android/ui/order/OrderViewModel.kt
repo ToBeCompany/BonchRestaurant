@@ -11,7 +11,11 @@ class OrderViewModel(
 
     val foodStateFlow = MutableStateFlow<List<Food>>(listOf())
 
-    fun setupFoods(id : String){
-        foodStateFlow.value = restaurantRepository.foodsDataCache[id] ?: listOf()
+    fun loadFoods(id : String){
+        foodStateFlow.value = restaurantRepository.foods(id)
     }
+    fun loadCacheFoods(){
+        foodStateFlow.value = restaurantRepository.foods()
+    }
+
 }
