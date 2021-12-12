@@ -13,7 +13,7 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
 fun initKoin() = initKoin{}
 
 val commonModule = module {
-    single<CLASSTEST> { CLASSTEST() }
+//    single<CLASSTEST> { Resta() }
 
 //    single { PeopleInSpaceRepository() }
 }

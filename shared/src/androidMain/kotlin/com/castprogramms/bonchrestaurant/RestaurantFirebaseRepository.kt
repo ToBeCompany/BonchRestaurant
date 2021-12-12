@@ -25,4 +25,10 @@ class RestaurantFirebaseRepository(private val firebaseFirestore: FirebaseFirest
         emit(Resource.Error(it.message.toString()))
     }.flowOn(Dispatchers.IO)
 
+    fun addRestaurant(restaurant: Restaurant){
+        firebaseFirestore.collection(restaurant_tag)
+            .document()
+            .set(restaurant)
+    }
+
 }

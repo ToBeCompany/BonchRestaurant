@@ -55,6 +55,7 @@
             android:src="@drawable/ic_frame"/>
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_geo_position"
             android:text="kazi Deiry, Taiger Pass\nChittagong"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

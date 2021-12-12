@@ -6,4 +6,5 @@
     <string name="not_now">Not now</string>
     <string name="date">дд/мм/гггг</string>
     <string name="book_a_table">Book a table</string>
+    <string name="time">чч:мм</string>
 </resources>
