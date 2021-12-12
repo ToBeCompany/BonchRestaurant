@@ -2,6 +2,7 @@ package com.castprogramms.bonchrestaurant.android
 
 import androidx.multidex.MultiDexApplication
 import com.castprogramms.bonchrestaurant.Platform
+import com.castprogramms.bonchrestaurant.android.ui.booking.BookingViewModel
 import com.castprogramms.bonchrestaurant.android.ui.order.OrderViewModel
 import com.castprogramms.bonchrestaurant.android.ui.selectionrestaurant.SelectionRestaurantViewModel
 import com.castprogramms.bonchrestaurant.initKoin
@@ -21,6 +22,7 @@ class BouchApplication : MultiDexApplication() {
             modules(module {
                 viewModel { OrderViewModel(get(),get()) }
                 viewModel { SelectionRestaurantViewModel(get()) }
+                viewModel { BookingViewModel(get()) }
             })
         }
     }

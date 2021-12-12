@@ -30,6 +30,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/date_time"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/image_time"
@@ -55,6 +56,7 @@
                 android:src="@drawable/ic_frame"/>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/location"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@id/image_location"
@@ -80,6 +82,7 @@
                 android:src="@drawable/guests"/>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/quantity_guests"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@id/image_guests"

@@ -15,7 +15,8 @@ import com.castprogramms.bonchrestaurant.android.databinding.ItemRestaurantBindi
 import com.castprogramms.bonchrestaurant.utils.Restaurant
 
 class RestaurantAdapter(
-    private val listener: (restName : String) -> Unit
+    private val listener: (restName: String) -> Unit,
+    val setLocation: (String) -> Unit
 ): RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>(){
     var restaurants = listOf<Restaurant>()
     set(value) {
@@ -45,6 +46,7 @@ class RestaurantAdapter(
 
             binding.buttonForRestaurant.setOnClickListener {
                 listener(restaurant.name)
+                setLocation(restaurant.address.toString())
             }
         }
     }

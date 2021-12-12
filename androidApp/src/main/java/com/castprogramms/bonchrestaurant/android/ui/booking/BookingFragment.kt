@@ -5,13 +5,17 @@ import android.text.Editable
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.castprogramms.bonchrestaurant.BookingRepository
 import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.FragmentBookingBinding
+import com.castprogramms.bonchrestaurant.utils.Book
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 class BookingFragment : Fragment(R.layout.fragment_booking) {
+    val viewModel: BookingViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -52,6 +56,13 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
 
         binding.buttonBook.setOnClickListener {
             it.findNavController().navigate(R.id.action_bookingFragment_to_successBookingFragment)
+            viewModel.setBook(
+                Book(
+                    binding.timeText.text.toString().trim(),
+                    binding.dateText.text.toString().trim(),
+                    binding.quantityGuestsText.text.toString().trim().toInt()
+                )
+            )
         }
     }
 
