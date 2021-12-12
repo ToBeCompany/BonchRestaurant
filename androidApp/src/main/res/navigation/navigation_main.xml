@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_successBookingFragment_to_orderWithMenuFragment"
             app:destination="@id/orderWithMenuFragment" />
+        <action
+            android:id="@+id/action_successBookingFragment_to_infoBookFragment"
+            app:destination="@id/infoBookFragment" />
     </fragment>
     <fragment
         tools:layout="@layout/fragment_order_with_menu"
@@ -58,4 +61,13 @@
         android:name="com.castprogramms.bonchrestaurant.android.ui.checkorder.CheckOrderFragment"
         android:label="fragment_check_order"
         tools:layout="@layout/fragment_check_order" />
+        android:label="OrderWithMenuFragment" />
+    <fragment
+        android:id="@+id/infoBookFragment"
+        android:name="com.castprogramms.bonchrestaurant.android.ui.infobook.InfoBookFragment"
+        android:label="InfoBookFragment" >
+        <action
+            android:id="@+id/action_infoBookFragment_to_orderWithMenuFragment"
+            app:destination="@id/orderWithMenuFragment" />
+    </fragment>
 </navigation>

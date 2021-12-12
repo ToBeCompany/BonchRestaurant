@@ -15,5 +15,9 @@ class SuccessBookingFragment: Fragment(R.layout.fragment_success_booking) {
         binding.buttonCreateOrder.setOnClickListener {
             it.findNavController().navigate(R.id.action_successBookingFragment_to_orderWithMenuFragment)
         }
+
+        binding.buttonCancelOrder.setOnClickListener {
+            it.findNavController().navigate(R.id.action_successBookingFragment_to_infoBookFragment)
+        }
     }
 }
