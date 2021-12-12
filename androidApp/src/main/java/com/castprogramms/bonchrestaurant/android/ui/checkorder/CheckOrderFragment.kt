@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.FragmentCheckOrderBinding
@@ -28,6 +29,10 @@ class CheckOrderFragment : Fragment(R.layout.fragment_check_order) {
             viewModel.bagState.collectLatest{
                 binding.foodList.adapter = CheckOrderAdapter(it)
             }
+        }
+
+        binding.fab.setOnClickListener {
+            it.findNavController().navigate(R.id.action_checkOrderFragment_to_orderWithMenuFragment)
         }
     }
 }

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="callback_headred">Did you like the restaurant?</string>
-    <string name="feedback_desc">" Leave your impressions to help us become better!"</string>
-    <string name="send">Send</string>
-    <string name="not_now">Not now</string>
+    <string name="callback_headred">Все ли вам понравилось?</string>
+    <string name="feedback_desc">"Оставте вашу оценку, чтобы мы стали лучше!"</string>
+    <string name="send">Отправить</string>
+    <string name="not_now">Не сейчас</string>
     <string name="date">дд/мм/гггг</string>
-    <string name="book_a_table">Book a table</string>
+    <string name="book_a_table">Забронировать столик</string>
     <string name="time">чч:мм</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="complete">Complete</string>
-    <string name="call_waiter">Call Waiter</string>
-    <string name="view_order">View order</string>
-    <string name="waiter">Waiter</string>
-    <string name="tips">Tips</string>
+
+    <string name="complete">Завершить</string>
+    <string name="call_waiter">Вызов официанта</string>
+    <string name="view_order">Заказ</string>
+    <string name="waiter">Ваш официант</string>
+    <string name="tips">Чаевые</string>
 </resources>

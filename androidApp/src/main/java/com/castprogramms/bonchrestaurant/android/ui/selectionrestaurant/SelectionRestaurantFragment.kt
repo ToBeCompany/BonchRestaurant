@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.coroutineScope
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import com.castprogramms.bonchrestaurant.android.R
 import com.castprogramms.bonchrestaurant.android.databinding.FragmentSelectionRestaurantBinding
@@ -42,10 +41,11 @@ class SelectionRestaurantFragment: Fragment(
 
                     }
                     is Resource.Loading -> {
-
+                        binding.progressBarRest.root.visibility = View.VISIBLE
                     }
                     is Resource.Success -> {
                         if (it.data != null){
+                            binding.progressBarRest.root.visibility = View.GONE
                             adapter.restaurants = it.data!!
                         }
                     }

@@ -42,8 +42,12 @@
         android:label="Бронь подтверждена" >
         <action
             android:id="@+id/action_successBookingFragment_to_orderWithMenuFragment"
-            app:destination="@id/orderWithMenuFragment" />
+            app:destination="@id/orderWithMenuFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/infoBookFragment" />
         <action
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/infoBookFragment"
             android:id="@+id/action_successBookingFragment_to_infoBookFragment"
             app:destination="@id/infoBookFragment" />
     </fragment>
@@ -60,7 +64,11 @@
         android:id="@+id/checkOrderFragment"
         android:name="com.castprogramms.bonchrestaurant.android.ui.checkorder.CheckOrderFragment"
         android:label="Проверьте заказ"
-        tools:layout="@layout/fragment_check_order" />
+        tools:layout="@layout/fragment_check_order" >
+        <action
+            android:id="@+id/action_checkOrderFragment_to_orderWithMenuFragment"
+            app:destination="@id/orderWithMenuFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/infoBookFragment"
@@ -74,12 +82,20 @@
             android:id="@+id/action_infoBookFragment_to_checkOrderFragment"
             app:destination="@id/checkOrderFragment" />
         <action
-            android:id="@+id/action_infoBookFragment_to_callbackFragment2"
-            app:destination="@id/callbackFragment2" />
+            android:id="@+id/action_infoBookFragment_to_tipsFragment"
+            app:destination="@id/tipsFragment" />
     </fragment>
     <fragment
         android:id="@+id/callbackFragment2"
         android:name="com.castprogramms.bonchrestaurant.android.ui.callback.CallbackFragment"
         android:label="Обратная связь"
         tools:layout="@layout/callback_fragment" />
+    <fragment
+        android:id="@+id/tipsFragment"
+        android:name="com.castprogramms.bonchrestaurant.android.ui.tips.TipsFragment"
+        android:label="Чаевые" >
+        <action
+            android:id="@+id/action_tipsFragment_to_callbackFragment2"
+            app:destination="@id/callbackFragment2" />
+    </fragment>
 </navigation>

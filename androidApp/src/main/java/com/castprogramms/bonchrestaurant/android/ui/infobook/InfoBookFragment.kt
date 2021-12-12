@@ -36,12 +36,10 @@ class InfoBookFragment: Fragment(R.layout.fragment_info_book) {
         }
         binding.dateTime.text = viewModel.getBook().date + ", " + viewModel.getBook().time
         binding.location.text = viewModel.getLocation()
-        binding.quantityGuests.text = viewModel.getBook().quantity_guests.toString() + " persons"
+        binding.quantityGuests.text = "Количество гостей: " + viewModel.getBook().quantity_guests
 
         binding.complete.setOnClickListener {
-            findNavController().navigate(
-                InfoBookFragmentDirections.actionInfoBookFragmentToCallbackFragment2()
-            )
+            findNavController().navigate(R.id.action_infoBookFragment_to_tipsFragment)
         }
 
     }

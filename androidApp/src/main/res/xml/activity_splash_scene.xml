@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="402dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_width="402dp"
+            motion:layout_constraintStart_toEndOf="parent"
+            android:id="@+id/back_logo" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/back_logo"
+            motion:layout_constraintBottom_toBottomOf="@+id/back_logo"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/logo" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/logo"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="@+id/back_logo"
+            motion:layout_constraintTop_toTopOf="@+id/back_logo"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@+id/back_logo"
+            android:layout_width="wrap_content"
+            android:visibility="visible"/>
+    </ConstraintSet>
+</MotionScene>
